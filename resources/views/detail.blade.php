@@ -1,4 +1,4 @@
-@extends('template')
+@extends($loginState ? 'templateLogin' : 'template');
 @section('main') 
 <div class="container-fluid">
 	<div class="row">
