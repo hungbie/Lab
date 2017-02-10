@@ -7,14 +7,12 @@ use Validator;
 session_start();
 
 class StudentController extends Controller {
-
 	
 	private $limit = 50;
 	private $data = array();
 
 	public function __construct() {
 		$this->data = $this->getFakeData();
-
 	}
 	public function index(Request $getReq) {
 		if ($getReq->session()->has('loginState'))
@@ -80,6 +78,7 @@ class StudentController extends Controller {
 			$loginReq->session()->put('loginState',true);
 			return view('loggedIn');
 		}
+	}
 // =======
 // {
 // 	private $limit = 50;
