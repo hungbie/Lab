@@ -20,7 +20,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php 
+		<?php
 			for ($i = 1; $i <= $limit; $i++) {
 				echo
 				"<tr>

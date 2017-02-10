@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -6,16 +6,15 @@ use Faker\Factory as faker;
 use Validator;
 session_start();
 
-class StudentController extends Controller
-{	
-	
+class StudentController extends Controller {
+
 	
 	private $limit = 50;
 	private $data = array();
-	
+
 	public function __construct() {
 		$this->data = $this->getFakeData();
-	
+
 	}
 	public function index(Request $getReq) {
 		if ($getReq->session()->has('loginState'))
@@ -81,7 +80,29 @@ class StudentController extends Controller
 			$loginReq->session()->put('loginState',true);
 			return view('loggedIn');
 		}
-	}
+// =======
+// {
+// 	private $limit = 50;
+//
+// 	public function __construct() {
+// 		session_start();
+// 	}
+//
+// 	public function index() {
+// 		$_SESSION["data"] = $this->getFakeData();
+// 		if (session('createdStudent') != NULL) {
+// 			$_SESSION["data"][] = session('createdStudent');
+// 			session(['createdStudent' => NULL]);
+// 		}
+//
+// 		return view('index')->with('data', $_SESSION["data"])->with('limit', count($_SESSION["data"]));
+// 	}
+//
+// 	public function detail($id) {
+// 		return view('detail')->with('data', $_SESSION["data"])->with('id', $id);
+// >>>>>>> Non-persisent create using session
+	// }
+
 	public function getFakeData() {
 		$faker = faker::create();
 		$faker->seed(123);
