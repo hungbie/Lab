@@ -31,11 +31,9 @@
         <li><a href="{{ url('help') }}">Help</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
        
-          <li><a href="{{url('login')}}">Admin Login</a></li>
-         
-        
+          <li><a href="{{url('login')}}">Admin logged in</a></li>
+      
       <li class="dropdown"></li>
       </ul>
     </div>
