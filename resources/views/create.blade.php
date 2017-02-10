@@ -1,4 +1,4 @@
-@extends('template')
+@extends('templateLogin')
 @section('main')
 <div class="container-fluid">
   @if (count($errors) > 0) {{-- just list down all errors found --}}
