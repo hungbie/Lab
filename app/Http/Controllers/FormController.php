@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 use Validator;
 
 class FormController extends Controller {
-  public function createForm() { return view('create'); }
+  public function createForm() {
+    return view('create');
+  }
+
+  public function edit($id) {
+    return view('edit');
+  }
 
   public function validateFields(Request $request) {
 
