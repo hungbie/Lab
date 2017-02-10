@@ -2,7 +2,7 @@
 @section('main')
 <div class="container-fluid">
   <div>
-    <h3><strong>some guy</strong> in some sem some year</h3>
+    <h3><strong>{{$data[$id][1]}}</strong> in CS3233 S2 AY 2016/17</h3>
   </div>
   @if (count($errors) > 0) {{-- just list down all errors found --}}
     <div class="alert alert-danger">
@@ -59,7 +59,7 @@
     {!! Form::text('specficcomments', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-    {!! Form::submit('Create', ['class' => 'form-control btn-primary']) !!}
+    {!! Form::submit('Update', ['class' => 'form-control btn-primary']) !!}
   </div>
   {!! Form::close() !!}
 </div>

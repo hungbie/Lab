@@ -11,7 +11,8 @@ class FormController extends Controller {
   }
 
   public function edit($id) {
-    return view('edit');
+    session_start();
+    return view('edit')->with('data', $_SESSION["data"])->with('id', $id);
   }
 
   public function validateFields(Request $request) {
