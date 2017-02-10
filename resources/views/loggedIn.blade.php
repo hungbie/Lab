@@ -5,7 +5,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<p>You are logged in!</p>
 			
-			<button type="button" class="btn btn-primary"><a href="{{url('logout')}}">Logout</a></button>
+			<button type="button" class="btn="><a href="{{url('logout')}}">Logout</a></button>
 					
 		</div>
 	</div>
