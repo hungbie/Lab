@@ -79,7 +79,7 @@ class StudentController extends Controller
 		}
 		else {
 			$loginReq->session()->put('loginState',true);
-			return view('index')->with('data', $this->data)->with('limit', $this->limit)->with('loginState', true);
+			return view('loggedIn');
 		}
 	}
 	public function getFakeData() {
