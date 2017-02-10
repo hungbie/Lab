@@ -8,4 +8,5 @@ Route::get('logout', 'StudentController@logout');
 Route::get('create', 'FormController@createForm');
 Route::post('create', 'FormController@validateFields');
 Route::get('student/{id}/edit', 'FormController@edit');
+Route::post('student/{id}/edit', 'FormController@validateEdit');
 ?>
