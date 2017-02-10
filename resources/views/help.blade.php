@@ -1,4 +1,4 @@
-@extends($loginState ? 'templateLogin' : 'template');
+@extends($loginState ? 'templateLogin' : 'template')
 @section('main')
 <div class="row">
   <div class="col-xs-12">

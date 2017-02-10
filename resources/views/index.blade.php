@@ -1,4 +1,4 @@
-@extends($loginState ? 'templateLogin' : 'template');
+@extends($loginState ? 'templateLogin' : 'template')
 @section('main')
 <!-- table of students-->
 <table id="ranktable" class="table table-condensed table-hover">
