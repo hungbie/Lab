@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Faker\Factory as faker;
 use Validator;
-session_start();
 
 class StudentController extends Controller {
 	
@@ -12,19 +11,25 @@ class StudentController extends Controller {
 	private $data = array();
 
 	public function __construct() {
-		$this->data = $this->getFakeData();
+		
 	}
 	public function index(Request $getReq) {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		return view('index')->with('data', $this->data)->with('limit', $this->limit)->with('loginState', $loginState);
+		if ($getReq->session()->has('data') == false)
+			$getReq->session()->put('data', $this->getFakeData());
+		$data = $getReq->session()->get('data');
+		return view('index')->with('data', $data)->with('limit', sizeof($data))->with('loginState', $loginState);
 	}
 	public function detail($id, Request $getReq) {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		return view('detail')->with('data', $this->data)->with('id', $id)->with('loginState', $loginState);
+		if ($getReq->session()->has('data') == false)
+			$getReq->session()->put('data', $this->getFakeData());
+		$data = $getReq->session()->get('data');
+		return view('detail')->with('data', $data)->with('id', $id)->with('loginState', $loginState);
 	}
 	public function help(Request $getReq){
 		if ($getReq->session()->has('loginState'))
