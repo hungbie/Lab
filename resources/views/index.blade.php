@@ -24,7 +24,7 @@
 
 			for ($i = 1; $i <= $limit; $i++) {
 				$studentName = ($loginState ? "<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$i}\"> {$data[$i][1]} </a><a href=\"student/{$i}/edit\"> [edit] </a> </td>":"<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$i}\"> {$data[$i][1]} </a> </td>");
-				$studentNickName = ($loginState ?  "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"".url('student')."/{$i}\">{$data[$i][2]}</a><a href=\"student/{$i}/edit\"> [edit] </a></td>": "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"'student'/{$i}\">{$data[$i][2]}</a></td>");
+				$studentNickName = ($loginState ?  "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"".url('student')."/{$i}\">{$data[$i][2]}</a><a href=\"student/{$i}/edit\"> [edit] </a></td>": "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"student/{$i}\">{$data[$i][2]}</a></td>");
 				echo
 				"<tr>
 					<td>".$i."</td>
