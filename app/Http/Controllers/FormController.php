@@ -37,7 +37,7 @@ class FormController extends Controller {
              ->withInput(); // the previously entered input remains
     }
     $data = $request->session()->get('data');
-    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), 0, 0, 0, 0, 0, 0, 0);
+    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), 0, 0, 0, 0, 0, 0, 0, 0, 0);
     array_push($data, $createdStudent);
     $request->session()->put('data',$data);
 
