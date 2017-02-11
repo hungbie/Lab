@@ -38,7 +38,7 @@ class FormController extends Controller {
     }
     $data = $request->session()->get('data');
     $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), 0, 0, 0, 0, 0, 0, 0);
-    push_array($data, $createdStudent);
+    array_push($data, $createdStudent);
     $request->session()->put('data',$data);
 
     return redirect('/');
