@@ -21,25 +21,24 @@
 	</thead>
 	<tbody>
 		<?php
-
-			for ($i = 1; $i <= $limit; $i++) {
-				$studentName = ($loginState ? "<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$i}\"> {$data[$i][1]} </a><a href=\"student/{$i}/edit\"> [edit] </a> </td>":"<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$i}\"> {$data[$i][1]} </a> </td>");
-				$studentNickName = ($loginState ?  "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"".url('student')."/{$i}\">{$data[$i][2]}</a><a href=\"student/{$i}/edit\"> [edit] </a></td>": "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"student/{$i}\">{$data[$i][2]}</a></td>");
-				echo
+			foreach ($data as $value) {
+                                $studentName = ($loginState ? "<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$value['id']}\"> {$value['name']} </a><a href=\"student/{$value['id']}/edit\"> [edit] </a> </td>":"<td class=\"hidden-xs\"><img src=\"img/smiley.jpg\" class=\"photo\"><a href=\"student/{$value['id']}\"> {$value['name']} </a> </td>");
+                                $studentNickName = ($loginState ?  "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"".url('student')."/{$value['id']}\">{$value['nickname']}</a><a href=\"student/{$value['id']}/edit\"> [edit] </a></td>": "<td class=\"hidden-sm hidden-md hidden-lg\"><a href=\"'student'/{$value['id']}\">{$value['nickname']}</a></td>");
+			    echo
 				"<tr>
-					<td>".$i."</td>
-					<td class=\"hidden-xs\"><span class=\"flag-icon flag-icon-".strtolower($data[$i][0])." flag-icon-squared\"></span> {$data[$i][0]}</td>
+					<td>{$value['id']}</td>
+					<td class=\"hidden-xs\"><span class=\"flag-icon flag-icon-".strtolower($value['country'])." flag-icon-squared\"></span> {$value['country']}</td>
 					".$studentName."
-					".$studentNickName."
-					<td class=\"hidden-xs hidden-sm\">{$data[$i][3]}</td>
-					<td class=\"hidden-xs hidden-sm highlighted\">{$data[$i][4]}</td>
-					<td>{$data[$i][5]}</td>
-					<td class=\"hidden-xs hidden-sm highlighted\">{$data[$i][6]}</td>
-					<td class=\"hidden-xs hidden-sm highlighted\">{$data[$i][7]}</td>
-					<td class=\"hidden-xs hidden-sm highlighted\">{$data[$i][8]}</td>
-					<td class=\"hidden-xs hidden-sm\">{$data[$i][9]}</td>
-					<td>{$data[$i][10]}</td>
-					<td>{$data[$i][11]}</td>
+                                        ".$studentNickName."
+					<td class=\"hidden-xs hidden-sm\">{$value['mini_contests']}</td>
+					<td class=\"hidden-xs hidden-sm highlighted\">{$value['team_contests']}</td>
+					<td>{$value['speed']}</td>
+					<td class=\"hidden-xs hidden-sm highlighted\">{$value['homework']}</td>
+					<td class=\"hidden-xs hidden-sm highlighted\">{$value['problem_bs']}</td>
+					<td class=\"hidden-xs hidden-sm highlighted\">{$value['kattie_sets']}</td>
+					<td class=\"hidden-xs hidden-sm\">{$value['achievements']}</td>
+					<td>{$value['diligence']}</td>
+					<td>{$value['sum']}</td>
 				</tr>";
 			}
 		?>

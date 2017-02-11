@@ -3,20 +3,20 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-9">
-		<?php 
-			$title = ($loginState ? "<h1>{$data[$id][1]} in CS3233 S2 AY 2016/17 <a href = '{$id}/edit'>[EDIT]</a></h1>"
-				: "<h1>{$data[$id][1]} in CS3233 S2 AY 2016/17 </h1>");
+		<?php
+			$title = ($loginState ? "<h1>{$data['name']} in CS3233 S2 AY 2016/17 <a href = '{$data['id']}/edit'>[EDIT]</a></h1>"
+				: "<h1>{$data['name']} in CS3233 S2 AY 2016/17 </h1>");
 			echo $title;
 			
 		?>
 			<p>
-				<h2>Kattis account: {{$data[$id][2]}}</h2>
+				<h2>Kattis account: {{$data['nickname']}}</h2>
 			</p>
 
 			<p>
-				<b>SPE</b>(ed) component: <b>{{$data[$id][3]}} + {{$data[$id][4]}} = {{$data[$id][5]}}</b><br>
-				<b>DIL</b>(igence) component: <b>{{$data[$id][6]}} + {{$data[$id][7]}} + {{$data[$id][8]}} + {{$data[$id][9]}} = {{$data[$id][10]}}</b><br>
-				<b>Sum = SPE + DIL = {{$data[$id][5]}} + {{$data[$id][10]}} = {{$data[$id][11]}} </b><br>
+				<b>SPE</b>(ed) component: <b>{{$data['mini_contests']}} + {{$data['team_contests']}} = {{$data['speed']}}</b><br>
+				<b>DIL</b>(igence) component: <b>{{$data['homework']}} + {{$data['problem_bs']}} + {{$data['kattie_sets']}} + {{$data['achievements']}} = {{$data['diligence']}}</b><br>
+				<b>Sum = SPE + DIL = {{$data['speed']}} + {{$data['diligence']}} = {{$data['sum']}} </b><br>
 			</p>
 		</div>
 		<div class="flag-icon-background flag-icon-{{strtolower($data[$id][0])}} flag-div hidden-xs hidden-sm col-sm-1" style="width:100px; height:50px; background-size:contain; background-position:50%; background-repeat:no-repeat;"></div>
@@ -52,8 +52,8 @@
 		<tbody>
 			<tr>
 				<td>Mini Contests</td>
-				<td>{{$data[$id][3]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][3]}}</td>
+				<td>{{$data['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['mini_contests']}}</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
@@ -68,8 +68,8 @@
 			</tr>
 			<tr>
 				<td>Team Contests</td>
-				<td>{{$data[$id][4]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][4]}}</td>
+				<td>{{$data['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['team_contests']}}</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
@@ -84,8 +84,8 @@
 			</tr>
 			<tr>
 				<td>Homework</td>
-				<td>{{$data[$id][6]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][6]}}</td>
+				<td>{{$data['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['homework']}}</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
@@ -100,8 +100,8 @@
 			</tr>
 			<tr>
 				<td>Problem Bs</td>
-				<td>{{$data[$id][7]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][7]}}</td>
+				<td>{{$data['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['problem_bs']}}</td>
 			<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
@@ -116,8 +116,8 @@
 			</tr>
 			<tr>
 				<td>Kattie Sets</td>
-				<td>{{$data[$id][8]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][8]}}</td>
+				<td>{{$data['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['kattie_sets']}}</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
@@ -132,8 +132,8 @@
 			</tr>
 			<tr>
 				<td>Achievements</td>
-				<td>{{$data[$id][9]}}</td>
-				<td class="hidden-xs hidden-sm">{{$data[$id][9]}}</td>
+				<td>{{$data['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$data['achievements']}}</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>
 				<td class="hidden-xs hidden-sm">0</td>

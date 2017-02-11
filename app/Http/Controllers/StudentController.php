@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Faker\Factory as faker;
+use App\Student as student;
 use Validator;
 
 class StudentController extends Controller {
@@ -11,25 +12,20 @@ class StudentController extends Controller {
 	private $data = array();
 
 	public function __construct() {
-		
+		$this->data = student::all();
 	}
 	public function index(Request $getReq) {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		if ($getReq->session()->has('data') == false)
-			$getReq->session()->put('data', $this->getFakeData());
-		$data = $getReq->session()->get('data');
-		return view('index')->with('data', $data)->with('limit', sizeof($data))->with('loginState', $loginState);
+		return view('index')->with('data', $this->data)->with('limit', sizeof($this->data))->with('loginState', $loginState);
 	}
 	public function detail($id, Request $getReq) {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		if ($getReq->session()->has('data') == false)
-			$getReq->session()->put('data', $this->getFakeData());
-		$data = $getReq->session()->get('data');
-		return view('detail')->with('data', $data)->with('id', $id)->with('loginState', $loginState);
+		$detail = student::find($id);
+		return view('detail')->with('data', $detail)->with('id', $id)->with('loginState', $loginState);
 	}
 	public function help(Request $getReq){
 		if ($getReq->session()->has('loginState'))
@@ -55,7 +51,7 @@ class StudentController extends Controller {
 	public function check(Request $loginReq) {
 		 $validator = Validator::make($loginReq->all(), [ // as simple as this
       		'userID' => 'required',
-      		'password' => 'required',
+      		'password' => 'required'
     	]);
 		 if ($validator->fails()) {
      		 return redirect('login') // redisplay the form
@@ -83,53 +79,6 @@ class StudentController extends Controller {
 			$loginReq->session()->put('loginState',true);
 			return view('loggedIn');
 		}
-	}
-// =======
-// {
-// 	private $limit = 50;
-//
-// 	public function __construct() {
-// 		session_start();
-// 	}
-//
-// 	public function index() {
-// 		$_SESSION["data"] = $this->getFakeData();
-// 		if (session('createdStudent') != NULL) {
-// 			$_SESSION["data"][] = session('createdStudent');
-// 			session(['createdStudent' => NULL]);
-// 		}
-//
-// 		return view('index')->with('data', $_SESSION["data"])->with('limit', count($_SESSION["data"]));
-// 	}
-//
-// 	public function detail($id) {
-// 		return view('detail')->with('data', $_SESSION["data"])->with('id', $id);
-// >>>>>>> Non-persisent create using session
-	// }
-
-	public function getFakeData() {
-		$faker = faker::create();
-		$faker->seed(123);
-		$array = array();
-		for ($i = 1; $i <= $this->limit; $i++) {
-			$student = array(
-				$faker->countryCode,
-				$faker->name,
-				$faker->firstName,
-				$faker->randomDigit,
-				$faker->randomDigit,
-				0,
-				$faker->randomDigit,
-				$faker->randomDigit,
-				$faker->randomDigit,
-				$faker->randomDigit,
-				0);
-			$student[5] = $student[3] + $student[4];
-			$student[10] = $student[6] + $student[7] + $student[8] + $student[9];
-			$student[11] = $student[5] + $student[10];
-			$array[$i] = $student;
-		}
-		return $array;
 	}
 }
 ?>
