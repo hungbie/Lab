@@ -71,6 +71,17 @@ class FormController extends Controller {
     $request->session()->put('data',$data);
     return redirect('/');
  }
+  
+ public function deleteStudent($id, Request $request){
+    $data = $request->session()->get('data');
+    $head = array();
+    unset($data[$id]);
+    $data2 = array_values($data);
+    array_unshift($data2, $head);
+    unset($data2[0]);
+    $request->session()->put('data',$data2);
+    return redirect('/');
+ }
 }
 
 

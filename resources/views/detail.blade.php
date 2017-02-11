@@ -158,6 +158,16 @@
 			<li>Active in class 2/3</li>
 		</ol>
 	<p>Specific (public) comments about this student: <b>some comments</b></p>
+	<script type="text/javascript" src="{{URL::asset('js/confirmDelete.js')}}"></script>
+@if ($loginState == true)
+{!! Form::open(['onsubmit' => 'return ConfirmDelete()']) !!}
+
+  <div class="form-group">
+    {!! Form::submit('Delete student', ['class' => 'form-control btn-primary']) !!}
+  </div>
+
+{!! Form::close() !!}
+@endif
 </div>
 
 @stop
