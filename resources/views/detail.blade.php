@@ -19,7 +19,7 @@
 				<b>Sum = SPE + DIL = {{$data['speed']}} + {{$data['diligence']}} = {{$data['sum']}} </b><br>
 			</p>
 		</div>
-		<div class="flag-icon-background flag-icon-{{strtolower($data[$id][0])}} flag-div hidden-xs hidden-sm col-sm-1" style="width:100px; height:50px; background-size:contain; background-position:50%; background-repeat:no-repeat;"></div>
+		<div class="flag-icon-background flag-icon-{{strtolower($data['country'])}} flag-div hidden-xs hidden-sm col-sm-1" style="width:100px; height:50px; background-size:contain; background-position:50%; background-repeat:no-repeat;"></div>
 		<div class="hidden-xs hidden-sm col-sm-2">
 			<img src="{{URL::asset('img/winterfell.jpg')}}" width="150px">
 		</div>
