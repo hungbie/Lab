@@ -3,7 +3,12 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-9">
-			<h1>{{$data[$id][1]}} in CS3233 S2 AY 2016/17</h1>
+		<?php 
+			$title = ($loginState ? "<h1>{$data[$id][1]} in CS3233 S2 AY 2016/17 <a href = '{$id}/edit'>[EDIT]</a></h1>"
+				: "<h1>{$data[$id][1]} in CS3233 S2 AY 2016/17 </h1>");
+			echo $title;
+			
+		?>
 			<p>
 				<h2>Kattis account: {{$data[$id][2]}}</h2>
 			</p>
