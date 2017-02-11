@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Faker\Factory as faker;
+use App\Student as student;
 
 class StudentController extends Controller
 {	
@@ -10,7 +11,7 @@ class StudentController extends Controller
 	private $data = array();
 
 	public function __construct() {
-		$this->data = $this->getFakeData();
+		$this->data = student::all();
 	}
 	public function index() {
 		return view('index')->with('data', $this->data)->with('limit', $this->limit);
