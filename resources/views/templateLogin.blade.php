@@ -30,6 +30,9 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ url('help') }}">Help</a></li>
       </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url('create') }}">Create new student</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
        
           <li><a href="{{url('login')}}">Admin logged in</a></li>
