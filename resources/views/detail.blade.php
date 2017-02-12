@@ -53,98 +53,98 @@
 			<tr>
 				<td>Mini Contests</td>
 				<td>{{$data['mini_contests']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['mini_contests']}}</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['mini_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['mini_contests']}}</td>
 			</tr>
 			<tr>
 				<td>Team Contests</td>
 				<td>{{$data['team_contests']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['team_contests']}}</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['team_contests']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['team_contests']}}</td>
 			</tr>
 			<tr>
 				<td>Homework</td>
 				<td>{{$data['homework']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['homework']}}</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['homework']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['homework']}}</td>
 			</tr>
 			<tr>
 				<td>Problem Bs</td>
 				<td>{{$data['problem_bs']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['problem_bs']}}</td>
-			<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['problem_bs']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['problem_bs']}}</td>
 			</tr>
 			<tr>
 				<td>Kattie Sets</td>
 				<td>{{$data['kattie_sets']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['kattie_sets']}}</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['kattie_sets']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['kattie_sets']}}</td>
 			</tr>
 			<tr>
 				<td>Achievements</td>
 				<td>{{$data['achievements']}}</td>
-				<td class="hidden-xs hidden-sm">{{$data['achievements']}}</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
-				<td class="hidden-xs hidden-sm">0</td>
+				<td class="hidden-xs hidden-sm">{{$week1['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week2['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week3['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week4['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week5['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week6['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week7['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week8['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week9['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week10['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week11['achievements']}}</td>
+				<td class="hidden-xs hidden-sm">{{$week12['achievements']}}</td>
 			</tr>
 		</tbody>
 	</table>
