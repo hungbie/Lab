@@ -1,10 +1,4 @@
-/node_modules
-/public/storage
-/public/hot
-/storage/*.key
-/storage
-/vendor
-/.idea
-Homestead.json
-Homestead.yaml
+storage
+vendor
 .env
+resources/views/vendor
