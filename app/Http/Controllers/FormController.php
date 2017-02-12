@@ -68,7 +68,8 @@ class FormController extends Controller {
     $s->diligence = 0;
     $s->sum = 0;
     $s->save();
-     $week1 = new week1;
+      $week1 = new week1;
+    $week1->student_id=$s->id;
     $week1->mini_contests = 0;
     $week1->team_contests = 0;
     $week1->homework = 0;
@@ -77,6 +78,7 @@ class FormController extends Controller {
     $week1->achievements=0;
     $week1->save();
      $week2 = new week2;
+     $week2 =->student_id=$s->id;
     $week2->mini_contests = 0;
     $week2->team_contests = 0;
     $week2->homework = 0;
@@ -85,6 +87,7 @@ class FormController extends Controller {
     $week2->achievements=0;
     $week2->save();
      $week3 = new week3;
+      $week3 =->student_id=$s->id;
     $week3->mini_contests = 0;
     $week3->team_contests = 0;
     $week3->homework = 0;
@@ -93,6 +96,7 @@ class FormController extends Controller {
     $week3->achievements=0;
     $week3->save();
      $week4 = new week4;
+      $week4 =->student_id=$s->id;
     $week4->mini_contests = 0;
     $week4->team_contests = 0;
     $week4->homework = 0;
@@ -101,6 +105,7 @@ class FormController extends Controller {
     $week4->achievements=0;
     $week4->save();
      $week5 = new week5;
+      $week5 =->student_id=$s->id;
     $week5->mini_contests = 0;
     $week5->team_contests = 0;
     $week5->homework = 0;
@@ -109,6 +114,7 @@ class FormController extends Controller {
     $week5->achievements=0;
     $week5->save();
      $week6 = new week6;
+      $week6 =->student_id=$s->id;
     $week6->mini_contests = 0;
     $week6->team_contests = 0;
     $week6->homework = 0;
@@ -117,6 +123,7 @@ class FormController extends Controller {
     $week6->achievements=0;
     $week6->save();
      $week7 = new week7;
+      $week7 =->student_id=$s->id;
     $week7->mini_contests = 0;
     $week7->team_contests = 0;
     $week7->homework = 0;
@@ -125,6 +132,7 @@ class FormController extends Controller {
     $week7->achievements=0;
     $week7->save();
      $week8 = new week8;
+      $week8 =->student_id=$s->id;
     $week8->mini_contests = 0;
     $week8->team_contests = 0;
     $week8->homework = 0;
@@ -133,6 +141,7 @@ class FormController extends Controller {
     $week8->achievements=0;
     $week8->save();
      $week9 = new week9;
+      $week9 =->student_id=$s->id;
     $week9->mini_contests = 0;
     $week9->team_contests = 0;
     $week9->homework = 0;
@@ -141,6 +150,7 @@ class FormController extends Controller {
     $week9->achievements=0;
     $week9->save();
      $week10 = new week10;
+      $week10 =->student_id=$s->id;
     $week10->mini_contests = 0;
     $week10->team_contests = 0;
     $week10->homework = 0;
@@ -149,6 +159,7 @@ class FormController extends Controller {
     $week10->achievements=0;
     $week10->save();
      $week11 = new week11;
+      $week11 =->student_id=$s->id;
     $week11->mini_contests = 0;
     $week11->team_contests = 0;
     $week11->homework = 0;
@@ -157,6 +168,7 @@ class FormController extends Controller {
     $week11->achievements=0;
     $week11->save();
      $week12 = new week12;
+      $week12 =->student_id=$s->id;
     $week12->mini_contests = 0;
     $week12->team_contests = 0;
     $week12->homework = 0;
@@ -164,7 +176,6 @@ class FormController extends Controller {
     $week12->kattie_sets=0;
     $week12->achievements=0;
     $week12->save();
-
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {
