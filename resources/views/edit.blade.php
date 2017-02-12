@@ -29,7 +29,7 @@
   </div>
   <div class="form-group">
     {!! Form::label('mc', 'Mini contest scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('mc', $data['mini_contests], ['class' => 'form-control']) !!}
+    {!! Form::text('mc', $data['mini_contests'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('tc', 'Team contest scores:', ['class' => 'control-label']) !!}
