@@ -91,13 +91,9 @@ class FormController extends Controller {
  }
   
  public function deleteStudent($id, Request $request){
-    $data = $request->session()->get('data');
-    $head = array();
-    unset($data[$id]);
-    $data2 = array_values($data);
-    array_unshift($data2, $head);
-    unset($data2[0]);
-    $request->session()->put('data',$data2);
+    $toDel = student::find($id);
+    $toDel->delete();
+	
     return redirect('/');
  }
 }
