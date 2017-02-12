@@ -33,11 +33,41 @@ class FormController extends Controller {
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
 
-    $detail = student::find($id); 
+    $detail = $this->formatDataForInputFields($id);
 	  
     if ($loginState == false) return redirect('login');
 	
     else return view('edit')->with('data', $detail)->with('id', $id);
+  }
+
+  public function formatDataForInputFields($id) {
+      $s = student::find($id);
+      $weeks = array (week1::find($id), week2::find($id), week3::find($id),
+          week4::find($id), week5::find($id), week6::find($id), week7::find($id),
+          week8::find($id), week9::find($id), week10::find($id), week11::find($id),
+          week12::find($id));
+
+      $formattedData = array(
+          'name' => $s['name'],
+          'nickname' => $s['nickname'],
+          'mini_contests' => '',
+          'team_contests' => '',
+          'homework' => '',
+          'problem_bs' => '',
+          'kattie_sets' => '',
+          'achievements' => ''
+      );
+
+      for($i = 0; $i < 12; $i++) {
+          $formattedData['mini_contests'] = $formattedData['mini_contests'] . $weeks[$i]['mini_contests'] . ($i < 11 ? "," : "");
+          $formattedData['team_contests'] = $formattedData['team_contests'] . $weeks[$i]['team_contests'] . ($i < 11 ? "," : "");
+          $formattedData['homework'] = $formattedData['homework'] . $weeks[$i]['homework'] . ($i < 11 ? "," : "");
+          $formattedData['problem_bs'] = $formattedData['problem_bs'] . $weeks[$i]['problem_bs'] . ($i < 11 ? "," : "");
+          $formattedData['kattie_sets'] = $formattedData['kattie_sets'] . $weeks[$i]['kattie_sets'] . ($i < 11 ? "," : "");
+          $formattedData['achievements'] = $formattedData['achievements'] . $weeks[$i]['achievements'] . ($i < 11 ? "," : "");
+      }
+
+      return $formattedData;
   }
 
   public function validateFields(Request $request) {
