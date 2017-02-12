@@ -2,7 +2,7 @@
 @section('main')
 <div class="container-fluid">
   <div>
-    <h3><strong>{{$data[$id][1]}}</strong> in CS3233 S2 AY 2016/17</h3>
+    <h3><strong>{{$data['name']}}</strong> in CS3233 S2 AY 2016/17</h3>
   </div>
   @if (count($errors) > 0) {{-- just list down all errors found --}}
     <div class="alert alert-danger">
