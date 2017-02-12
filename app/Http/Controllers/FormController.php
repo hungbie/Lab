@@ -20,13 +20,12 @@ class FormController extends Controller {
     if ($getReq->session()->has('loginState'))
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
-	$data = array();
-	  $data = student::all();
-	 
+
+    $detail = student::find($id); 
 	  
     if ($loginState == false) return redirect('login');
 	
-    else return view('edit')->with('data', $data)->with('id', $id);
+    else return view('edit')->with('data', $detail)->with('id', $id);
   }
 
   public function validateFields(Request $request) {
