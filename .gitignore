@@ -1,4 +1,4 @@
-/storage
-/vendor
+storage
+vendor
 .env
 resources/views/vendor
