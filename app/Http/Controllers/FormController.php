@@ -22,9 +22,11 @@ class FormController extends Controller {
     else $loginState = false;
 	$data = array();
 	  $data = student::all();
+	  $student = student::whereRaw('id = $id')->firstOrFail();
+	  
     if ($loginState == false) return redirect('login');
 	
-    else return view('edit')->with('data', $data)->with('id', $id);
+    else return view('edit')->with('data', $student)->with('id', $id);
   }
 
   public function validateFields(Request $request) {
