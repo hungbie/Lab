@@ -87,7 +87,7 @@ class FormController extends Controller {
     $data[$id] = $createdStudent;
     $request->session()->put('data',$data);
 	  $s = student::find($id);
-	   $s->country = $request->input('nationality');
+	
     $s->name = $request->input('fullname');
     $s->nickname = $request->input('nickname');
     $s->mini_contests = $request->input('mc');
