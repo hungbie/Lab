@@ -12,10 +12,15 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('help') }}">Help</a></li>
+                <li><a href="{{ url('help') }}">Help</a></li>
             </ul>
+            @if ($loginState)
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('create') }}">Create new student</a></li>
+                </ul>
+            @endif
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{url('login')}}">{{ $loginState }}</a></li>
+                <li><a href="{{url('login')}}">{{ $loginState ? 'Admin Logged in' : 'Admin Logged out'}}</a></li>
                 <li class="dropdown"></li>
             </ul>
         </div>
