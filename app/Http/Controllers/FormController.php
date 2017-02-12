@@ -250,6 +250,9 @@ class FormController extends Controller {
     $s->problem_bs=$bsSum;
     $s->kattie_sets=$ksSum;
     $s->achievements=$acSum;
+	  $s->speed=$mcSum + $tcSum;
+    $s->diligence=$hwSum + $bsSum + $ksSum + $acSum;
+    $s->sum = $s->speed + $s->diligence;
     $s->save();
     
     $week1->mini_contests=$mc[1];
