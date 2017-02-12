@@ -170,4 +170,8 @@
 @endif
 </div>
 
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'detail', 'name' => $data['name']])
+@overwrite
+
 @stop

@@ -112,3 +112,7 @@
 </div>
 </div>
 @stop
+
+@section('navbar')
+  @include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'help'])
+@overwrite

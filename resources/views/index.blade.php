@@ -26,3 +26,7 @@
 </table>
 </div>
 @stop
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'index'])
+@overwrite

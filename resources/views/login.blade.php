@@ -38,3 +38,7 @@
 	</div>
 </div>
 @stop
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'authpage'])
+@overwrite

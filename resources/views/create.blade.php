@@ -33,3 +33,7 @@
   {!! Form::close() !!}
 </div>
 @stop
+
+@section('navbar')
+  @include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'create'])
+@overwrite
