@@ -16,10 +16,11 @@ ac.on('keyup', recomputeSum);
 recomputeSum();
 
 function computeFieldSum(field) {
-    var splitInput = field.val().split('.');
+    var splitInput = field.val().split(',');
     var fieldSum = 0;
 
-    splitInput.forEach(function(value) {
+    splitInput.forEach(function(valueStr) {
+            var value = parseFloat(valueStr);
             if(!isNaN(value)) {
                 fieldSum += value;
             }
@@ -30,27 +31,14 @@ function computeFieldSum(field) {
 }
 
 // recomputeSum for regex version
-// function recomputeSum() {
-//     $(document).ready(function () {
-//         var sum = computeFieldSum(mc)
-//             + computeFieldSum(tc)
-//             + computeFieldSum(hw)
-//             + computeFieldSum(bs)
-//             + computeFieldSum(ks)
-//             + computeFieldSum(ac);
-//
-//         $('#sum').val(sum);
-//     });
-// }
-
 function recomputeSum() {
     $(document).ready(function () {
-        var sum = parseFloat(mc.val())
-            + parseFloat(tc.val())
-            + parseFloat(hw.val())
-            + parseFloat(bs.val())
-            + parseFloat(ks.val())
-            + parseFloat(ac.val());
+        var sum = computeFieldSum(mc)
+            + computeFieldSum(tc)
+            + computeFieldSum(hw)
+            + computeFieldSum(bs)
+            + computeFieldSum(ks)
+            + computeFieldSum(ac);
 
         $('#sum').val(sum);
     });

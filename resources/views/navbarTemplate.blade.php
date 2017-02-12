@@ -14,13 +14,13 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('help') }}">Help</a></li>
             </ul>
-            @if ($loginState)
+            @if ($isLoggedIn)
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('create') }}">Create new student</a></li>
                 </ul>
             @endif
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{url('login')}}">{{ $loginState ? 'Admin Logged in' : 'Admin Logged out'}}</a></li>
+                <li><a href="{{url('login')}}">{{ $isLoggedIn ? 'Admin Logged in' : 'Admin Logged out'}}</a></li>
                 <li class="dropdown"></li>
             </ul>
         </div>
