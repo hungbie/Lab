@@ -43,7 +43,7 @@ class FormController extends Controller {
     else return view('edit')->with('data', $detail)->with('id', $id);
   }
 
-  public function formatDataForInputFields($id) {
+  private function formatDataForInputFields($id) {
       $s = student::find($id);
       $weeks = array (week1::find($id), week2::find($id), week3::find($id),
           week4::find($id), week5::find($id), week6::find($id), week7::find($id),

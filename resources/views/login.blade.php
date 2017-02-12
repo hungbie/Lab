@@ -40,5 +40,5 @@
 @stop
 
 @section('navbar')
-	@include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'authpage'])
+	@include('navbarTemplate', ['isLoggedIn' => false, 'activePage' => 'authpage'])
 @overwrite
