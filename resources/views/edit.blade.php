@@ -2,7 +2,7 @@
 @section('main')
 <div class="container-fluid">
   <div>
-    <h3><strong>{{$data[$id][1]}}</strong> in CS3233 S2 AY 2016/17</h3>
+    <h3><strong>{{$data['name']}}</strong> in CS3233 S2 AY 2016/17</h3>
   </div>
   @if (count($errors) > 0) {{-- just list down all errors found --}}
     <div class="alert alert-danger">
@@ -13,42 +13,43 @@
       </ul>
     </div>
   @endif
+ 
   {!! Form::open() !!}
   <div class="form-group">
     {!! Form::label('nickname', 'Nick name:', ['class' => 'control-label']) !!}
-    {!! Form::text('nickname', $data[$id][2], ['class' => 'form-control']) !!}
+    {!! Form::text('nickname', $data['nickname'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('fullname', 'Full name:', ['class' => 'control-label']) !!}
-    {!! Form::text('fullname', $data[$id][1], ['class' => 'form-control']) !!}
+    {!! Form::text('fullname', $data['name'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('kattisaccount', 'Kattis account:', ['class' => 'control-label']) !!}
-    {!! Form::text('kattisaccount', $data[$id][2], ['class' => 'form-control']) !!}
+    {!! Form::text('kattisaccount', $data['nickname'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('mc', 'Mini contest scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('mc', $data[$id][3], ['class' => 'form-control']) !!}
+    {!! Form::text('mc', $data['mini_contests'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('tc', 'Team contest scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('tc', $data[$id][4], ['class' => 'form-control']) !!}
+    {!! Form::text('tc', $data['team_contests'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('hw', 'Homework scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('hw', $data[$id][6], ['class' => 'form-control']) !!}
+    {!! Form::text('hw', $data['homework'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('bs', 'Problem B scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('bs', $data[$id][7], ['class' => 'form-control']) !!}
+    {!! Form::text('bs', $data['problem_bs'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('ks', 'Kattis set scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('ks', $data[$id][8], ['class' => 'form-control']) !!}
+    {!! Form::text('ks', $data['kattie_sets'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('ac', 'Achievement scores:', ['class' => 'control-label']) !!}
-    {!! Form::text('ac', $data[$id][9], ['class' => 'form-control']) !!}
+    {!! Form::text('ac', $data['achievements'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('sum', 'Sum of scores (automatically computed):', ['class' => 'control-label']) !!}
