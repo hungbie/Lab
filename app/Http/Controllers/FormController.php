@@ -20,9 +20,10 @@ class FormController extends Controller {
     if ($getReq->session()->has('loginState'))
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
-    if ($loginState == false) return redirect('login');
 	$data = array();
 	  $data = student::all();
+    if ($loginState == false) return redirect('login');
+	
     else return view('edit')->with('data', $data)->with('id', $id);
   }
 
