@@ -8,7 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/')}}">CS3233 Ranklist 2017</a>
+            @if ($activePage == 'index')
+                <a class="navbar-brand" style="background-color: #E1E1E1" href="{{url('/')}}">CS3233 Ranklist 2017</a>
+            @else
+                <a class="navbar-brand" href="{{url('/')}}">CS3233 Ranklist 2017</a>
+            @endif
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             @if ($activePage == 'detail')
