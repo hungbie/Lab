@@ -87,6 +87,20 @@ class FormController extends Controller {
      $spe, $request->input('hw'), $request->input('bs'), $request->input('ks'), $request->input('ac'), $dil, $sum);
     $data[$id] = $createdStudent;
     $request->session()->put('data',$data);
+	  $s = student::find($id);
+	   $s->country = $request->input('nationality');
+    $s->name = $request->input('fullname');
+    $s->nickname = $request->input('nickname');
+    $s->mini_contests = $request->input('mc');
+    $s->team_contests = $request->input('tc');
+    $s->speed = $spe;
+    $s->homework = $request->input('hw');
+    $s->problem_bs = $request->input('bs');
+    $s->kattie_sets = $request->input('ks');
+    $s->achievements = $request->input('ac');
+    $s->diligence = $dil;
+    $s->sum = $sum;
+    $s->save();
     return redirect('/');
  }
   
