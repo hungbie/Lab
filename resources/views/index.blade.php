@@ -1,5 +1,6 @@
 @extends($loginState ? 'templateLogin' : 'template')
 @section('main')
+<div class='container-fluid'>
 <!-- table of students-->
 <table id="ranktable" class="table table-condensed table-hover">
 	<thead>
@@ -73,5 +74,5 @@
         ?>
 	</tbody>
 </table>
-
+</div>
 @stop
