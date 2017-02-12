@@ -60,10 +60,10 @@ foreach($data as $value) {
         $sums['second'] = $sums['first'];
 
         $sums['first'] = $currSum;
-    } elseif ($currSum > $sums['second']) {
+    } elseif ($currSum > $sums['second'] && $currSum < $sums['first']) {
         $sums['third'] = $sums['second'];
         $sums['second'] = $currSum;
-    } elseif ($currSum > $sums['third']) {
+    } elseif ($currSum > $sums['third'] && $currSum < $sums['second']) {
         $sums['third'] = $currSum;
     }
 }
