@@ -78,15 +78,12 @@ class FormController extends Controller {
              ->withErrors($validator) // to see the error messages
              ->withInput(); // the previously entered input remains
     }
-    $data = $request->session()->get('data');
+   
     $spe = $request->input('mc')+ $request->input('tc');
     $dil = $request->input('hw')+ $request->input('bs')+ $request->input('ks')+ $request->input('ac');
     $sum = $spe + $dil;
-    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), $request->input('mc'), $request->input('tc'), 
-     $spe, $request->input('hw'), $request->input('bs'), $request->input('ks'), $request->input('ac'), $dil, $sum);
-    $data[$id] = $createdStudent;
-    $request->session()->put('data',$data);
-	  $s = student::find($id);
+   
+    $s = student::find($id);
 	
     $s->name = $request->input('fullname');
     $s->nickname = $request->input('nickname');
