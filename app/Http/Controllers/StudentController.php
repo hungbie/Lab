@@ -16,6 +16,7 @@ use App\Week9 as week9;
 use App\Week10 as week10;
 use App\Week11 as week11;
 use App\Week12 as week12;
+use App\Image as image;
 use Validator;
 
 class StudentController extends Controller {
@@ -49,6 +50,7 @@ class StudentController extends Controller {
                 $week10 = week10::find($id);
                 $week11 = week11::find($id);
                 $week12 = week12::find($id);
+		$image = image::find($id);
 		return view('detail')
 			->with('data', $detail)
 			->with('id', $id)
@@ -64,7 +66,8 @@ class StudentController extends Controller {
                         ->with('week9', $week9)
                         ->with('week10', $week10)
                         ->with('week11', $week11)
-                        ->with('week12', $week12);
+                        ->with('week12', $week12)
+			->with('image', $image);
 	}
 	public function help(Request $getReq){
 		if ($getReq->session()->has('loginState'))

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student as student;
+use Guzzle\Tests\Plugin\Redirect;
+use App\Image as image;
+use Illuminate\Support\Facades\Input;
 use App\Week1 as week1;
 use App\Week2 as week2;
 use App\Week3 as week3;
@@ -206,6 +209,21 @@ class FormController extends Controller {
     $week12->kattie_sets=0;
     $week12->achievements=0;
     $week12->save();
+	if($request->hasFile('image')) {
+        $image = new image;
+      
+        $image->student_id = $s->id;
+        
+            $file = Input::file('image');
+            $ext = $request->file('image')->getClientOriginalExtension();
+            
+            $name = $s->id . '.' . $ext;
+            
+            $image->filePath = $name;
+
+            $file->move(public_path().'/images/', $name);
+        }
+        $image->save();
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {
