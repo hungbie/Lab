@@ -10,7 +10,7 @@
       </ul>
     </div>
   @endif
-  {!! Form::open() !!}
+  {!! Form::open(['files'=>true]) !!}
   <div class="form-group">
     {!! Form::label('nickname', 'Nick name:', ['class' => 'control-label']) !!}
     {!! Form::text('nickname', null, ['class' => 'form-control']) !!}
@@ -22,6 +22,10 @@
   <div class="form-group">
     {!! Form::label('kattisaccount', 'Kattis Account:', ['class' => 'control-label']) !!}
     {!! Form::text('kattisaccount', null, ['class' => 'form-control']) !!}
+  </div>
+  <div class="form-group">
+            {!! Form::label('image', 'Choose an image') !!}
+            {!! Form::file('image') !!}
   </div>
   <div class="form-group">
     {!! Form::label('nationality', 'Nationality:', ['class' => 'control-label']) !!}
