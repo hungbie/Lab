@@ -16,7 +16,7 @@
   {!! Form::open() !!}
   <div class="form-group">
     {!! Form::label('nickname', 'Nick name:', ['class' => 'control-label']) !!}
-    {!! Form::text('nickname', $data[$id][2], ['class' => 'form-control']) !!}
+    {!! Form::text('nickname', $data[$id]['nickname'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('fullname', 'Full name:', ['class' => 'control-label']) !!}
