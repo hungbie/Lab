@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student as student;
 use Validator;
 
+
 class FormController extends Controller {
+  private $data = array();
+  public function __construct() {
+		$this->data = student::all();
+	}
   public function createForm(Request $getReq) {
     if ($getReq->session()->has('loginState'))
       $loginState = $getReq->session()->get('loginState');
@@ -36,10 +42,21 @@ class FormController extends Controller {
              ->withErrors($validator) // to see the error messages
              ->withInput(); // the previously entered input remains
     }
-    $data = $request->session()->get('data');
-    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    array_push($data, $createdStudent);
-    $request->session()->put('data',$data);
+    $s = new student;
+    $s->country = $request->input('nationality');
+    $s->name = $request->input('fullname');
+    $s->nickname = $request->input('nickname');
+    $s->mini_contest = 0;
+    $s->team_contest = 0;
+    $s->speed = 0;
+    $s->homework = 0;
+    $s->problem_bs = 0;
+    $s->kattie_sets = 0;
+    $s->achievements = 0;
+    $s->diligence = 0;
+    $s->sum = 0;
+    $s->save();
+    
 
     return redirect('/');
   }
