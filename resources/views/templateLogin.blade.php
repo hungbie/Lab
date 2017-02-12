@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,10 +47,7 @@
 <script type="text/javascript" src="{{URL::asset('js/tableSort.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/radarChart.js')}}"></script>
 </body>
-<footer>
-  <div class="container text-center">
-    <p>&copy; 2017 Someone</p>
-  </div>
-</footer>
+
+@include('footer')
 
 </html>

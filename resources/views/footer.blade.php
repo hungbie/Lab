@@ -1,4 +1,5 @@
 <footer>
-  <p align="center">© 2017 Us
-  </p>
+  <div class="container text-center">
+    <p>&copy; 2017 Someone</p>
+  </div>
 </footer>
