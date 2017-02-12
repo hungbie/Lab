@@ -25,7 +25,7 @@ class FormController extends Controller {
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
     if ($loginState == false) return redirect('login');
-    else return view('edit')->with('data', $getReq->session()->get('data'))->with('id', $id);
+    else return view('edit')->with('data', $data)->with('id', $id);
   }
 
   public function validateFields(Request $request) {
