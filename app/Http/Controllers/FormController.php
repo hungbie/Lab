@@ -8,10 +8,6 @@ use Validator;
 
 
 class FormController extends Controller {
-  private $data = array();
-  public function __construct() {
-		$this->data = student::all();
-	}
   public function createForm(Request $getReq) {
     if ($getReq->session()->has('loginState'))
       $loginState = $getReq->session()->get('loginState');
@@ -25,7 +21,9 @@ class FormController extends Controller {
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
     if ($loginState == false) return redirect('login');
-    else return view('edit')->with('data', $this->data)->with('id', $id);
+	$data = array();
+	  $data = student::all();
+    else return view('edit')->with('data', $data)->with('id', $id);
   }
 
   public function validateFields(Request $request) {
