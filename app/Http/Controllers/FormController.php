@@ -46,8 +46,8 @@ class FormController extends Controller {
     $s->country = $request->input('nationality');
     $s->name = $request->input('fullname');
     $s->nickname = $request->input('nickname');
-    $s->mini_contest = 0;
-    $s->team_contest = 0;
+    $s->mini_contests = 0;
+    $s->team_contests = 0;
     $s->speed = 0;
     $s->homework = 0;
     $s->problem_bs = 0;
