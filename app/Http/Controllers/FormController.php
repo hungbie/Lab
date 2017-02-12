@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student as student;
 use Validator;
+
 
 class FormController extends Controller {
   public function createForm(Request $getReq) {
@@ -18,8 +20,12 @@ class FormController extends Controller {
     if ($getReq->session()->has('loginState'))
       $loginState = $getReq->session()->get('loginState');
     else $loginState = false;
+
+    $detail = student::find($id); 
+	  
     if ($loginState == false) return redirect('login');
-    else return view('edit')->with('data', $getReq->session()->get('data'))->with('id', $id);
+	
+    else return view('edit')->with('data', $detail)->with('id', $id);
   }
 
   public function validateFields(Request $request) {
@@ -36,10 +42,21 @@ class FormController extends Controller {
              ->withErrors($validator) // to see the error messages
              ->withInput(); // the previously entered input remains
     }
-    $data = $request->session()->get('data');
-    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    array_push($data, $createdStudent);
-    $request->session()->put('data',$data);
+    $s = new student;
+    $s->country = $request->input('nationality');
+    $s->name = $request->input('fullname');
+    $s->nickname = $request->input('nickname');
+    $s->mini_contests = 0;
+    $s->team_contests = 0;
+    $s->speed = 0;
+    $s->homework = 0;
+    $s->problem_bs = 0;
+    $s->kattie_sets = 0;
+    $s->achievements = 0;
+    $s->diligence = 0;
+    $s->sum = 0;
+    $s->save();
+    
 
     return redirect('/');
   }
@@ -61,25 +78,32 @@ class FormController extends Controller {
              ->withErrors($validator) // to see the error messages
              ->withInput(); // the previously entered input remains
     }
-    $data = $request->session()->get('data');
+   
     $spe = $request->input('mc')+ $request->input('tc');
     $dil = $request->input('hw')+ $request->input('bs')+ $request->input('ks')+ $request->input('ac');
     $sum = $spe + $dil;
-    $createdStudent = array($request->input('nationality'), $request->input('fullname'), $request->input('nickname'), $request->input('mc'), $request->input('tc'), 
-     $spe, $request->input('hw'), $request->input('bs'), $request->input('ks'), $request->input('ac'), $dil, $sum);
-    $data[$id] = $createdStudent;
-    $request->session()->put('data',$data);
+   
+    $s = student::find($id);
+	
+    $s->name = $request->input('fullname');
+    $s->nickname = $request->input('nickname');
+    $s->mini_contests = $request->input('mc');
+    $s->team_contests = $request->input('tc');
+    $s->speed = $spe;
+    $s->homework = $request->input('hw');
+    $s->problem_bs = $request->input('bs');
+    $s->kattie_sets = $request->input('ks');
+    $s->achievements = $request->input('ac');
+    $s->diligence = $dil;
+    $s->sum = $sum;
+    $s->save();
     return redirect('/');
  }
   
  public function deleteStudent($id, Request $request){
-    $data = $request->session()->get('data');
-    $head = array();
-    unset($data[$id]);
-    $data2 = array_values($data);
-    array_unshift($data2, $head);
-    unset($data2[0]);
-    $request->session()->put('data',$data2);
+    $toDel = student::find($id);
+    $toDel->delete();
+	
     return redirect('/');
  }
 }

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css"href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
-  <link rel="stylesheet" href="{{URL::asset('css/custom_style.css')}}">
+  <link rel="stylesheet" href="<?php echo e(URL::asset('css/custom_style.css')); ?>">
 </head>
 
 <body>
@@ -24,29 +24,30 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}">CS3233 Ranklist 2017</a>
+      <a class="navbar-brand" href="<?php echo e(url('/')); ?>">CS3233 Ranklist 2017</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('help') }}">Help</a></li>
-      </ul>
-      <ul class="nav navbar-nav">
-        <li><a href="{{ url('create') }}">Create new student</a></li>
+        <li><a href="<?php echo e(url('help')); ?>">Help</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        
        
-          <li><a href="{{url('login')}}">Admin logged in</a></li>
-      
+          <li><a href="<?php echo e(url('login')); ?>">Admin Login</a></li>
+         
+        
       <li class="dropdown"></li>
       </ul>
     </div>
   </div>
 </nav>
-@yield('main')
+<?php echo $__env->yieldContent('main'); ?>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
-<script type="text/javascript" src="{{URL::asset('js/tableSort.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('js/radarChart.js')}}"></script>
+<script type="text/javascript" src="<?php echo e(URL::asset('js/highlightRow.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(URL::asset('js/highlightCell.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(URL::asset('js/tableSort.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(URL::asset('js/radarChart.js')); ?>"></script>
 </body>
 <footer>
   <div class="container text-center">
