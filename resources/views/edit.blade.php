@@ -13,10 +13,13 @@
       </ul>
     </div>
   @endif
+  <?php
+    $value = $data[$id];
+  ?>
   {!! Form::open() !!}
   <div class="form-group">
     {!! Form::label('nickname', 'Nick name:', ['class' => 'control-label']) !!}
-    {!! Form::text('nickname', $data[$id]['nickname'], ['class' => 'form-control']) !!}
+    {!! Form::text('nickname', $value['nickname'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('fullname', 'Full name:', ['class' => 'control-label']) !!}
