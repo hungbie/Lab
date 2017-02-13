@@ -238,19 +238,14 @@ class FormController extends Controller {
 	if($request->hasFile('image')) {
         $file = Input::file('image');
         $ext = $request->file('image')->getClientOriginalExtension();
-		$image = new image;
-      
-        $image->student_id = $s->id;
-        
-           
-            
-            $name = $s->id . '.' . $ext;
-            
+	$image = new image;
+        $image->student_id = $s->id;     
+           $name = $s->id . '.' . $ext;           
             $image->filePath = $name;
-
             $file->move(public_path().'/images/', $name);
+	$image->save();
         }
-        $image->save();
+        
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {
