@@ -29,7 +29,7 @@
   </div>
   <div class="form-group">
     {!! Form::label('nationality', 'Nationality:', ['class' => 'control-label']) !!}
-    {!! Form::select('nationality', ['SGP' => 'SGP - Singaporean', 'CHN' => 'CHN - Chinese', 'VNM' => 'VNM - Vietnamese', 'IDN' => 'IDN - Indonesian', 'OTH' => 'OTH - Other Nationality'], null, ['placeholder' => 'Select Nationality']) !!}
+    {!! Form::select('nationality', ['SG' => 'SGP - Singaporean', 'CN' => 'CHN - Chinese', 'VN' => 'VNM - Vietnamese', 'ID' => 'IDN - Indonesian', 'OTH' => 'OTH - Other Nationality'], null, ['placeholder' => 'Select Nationality']) !!}
   </div>
   <div class="form-group">
     {!! Form::submit('Create', ['class' => 'form-control btn-primary']) !!}
