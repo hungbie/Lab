@@ -227,7 +227,7 @@ class FormController extends Controller {
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {
-  $regex = 'regex:/^[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5]/';
+  $regex = 'regex:/^[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05]/';
   $validator = Validator::make($request->all(), [ // as simple as this
       'nickname' => 'required|min:5|max:30',
       'fullname' => 'required|min:5|max:30',

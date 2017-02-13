@@ -43,7 +43,7 @@ function setRowHeightAccordingToSum() {
       var nextScore = parseFloat(nextRow.find("td:eq(12)").text());
 
       var difference = currScore - nextScore;
-      var newHeight = 30 + 20 * difference;
+      var newHeight = 30 + 5 * difference;
       nextRow.css('height', newHeight);
   });
 }
