@@ -42,10 +42,10 @@
             @endif
             <ul class="nav navbar-nav navbar-right">
             @if ($activePage == 'authpage')
-                <li class="active"><a href="{{url('login')}}">{{ $isLoggedIn ? 'Admin Logged in' : 'Admin Logged out'}}</a></li>
+                <li class="active"><a href="{{url('login')}}">{{ $isLoggedIn ? 'Sign Out' : 'Sign In'}}</a></li>
 
             @else
-                <li><a href="{{url('login')}}">{{ $isLoggedIn ? 'Admin Logged in' : 'Admin Logged out'}}</a></li>
+                <li><a href="{{url('login')}}">{{ $isLoggedIn ? 'Sign Out' : 'Sign In'}}</a></li>
             @endif
                 <li class="dropdown"></li>
             </ul>
