@@ -79,13 +79,39 @@ class FormController extends Controller {
       'nickname' => 'required|min:5|max:30',
       'fullname' => 'required|min:5|max:30',
       'kattisaccount' => 'required|min:5|max:30',
+      'image' => 'max:5000',
       'nationality' => 'required',
     ]);
 
-    if ($validator->fails()) {
+    $fileExtError;
+    $fileCheck = true;   
+    if($request->hasFile('image')) {
+       
+            $file = Input::file('image');
+            $ext = $request->file('image')->getClientOriginalExtension();
+            if($ext == 'jpg' || $ext == 'png'){
+              $fileCheck = true;
+            }
+            else {
+            $fileExtError = 'File extension ' .$ext.' not supported!';
+            $fileCheck = false;
+          }
+    }
+    if ($validator->fails() && $fileCheck == false) {
       return redirect('create') // redisplay the form
              ->withErrors($validator) // to see the error messages
+             ->withErrors($fileExtError)
              ->withInput(); // the previously entered input remains
+    }
+    if ($validator->fails() && $fileCheck == true){
+      return redirect('create') // redisplay the form
+             ->withErrors($validator) // to see the error messages
+             ->withInput();
+    }
+    if ($fileCheck == false){
+      return redirect('create') // redisplay the form
+             ->withErrors($fileExtError) // to see the error messages
+             ->withInput();
     }
     $s = new student;
     $s->country = $request->input('nationality');
@@ -210,20 +236,16 @@ class FormController extends Controller {
     $week12->achievements=0;
     $week12->save();
 	if($request->hasFile('image')) {
-        $image = new image;
-      
-        $image->student_id = $s->id;
-        
-            $file = Input::file('image');
-            $ext = $request->file('image')->getClientOriginalExtension();
-            
-            $name = $s->id . '.' . $ext;
-            
+        $file = Input::file('image');
+        $ext = $request->file('image')->getClientOriginalExtension();
+	$image = new image;
+        $image->student_id = $s->id;     
+           $name = $s->id . '.' . $ext;           
             $image->filePath = $name;
-
             $file->move(public_path().'/images/', $name);
+	$image->save();
         }
-        $image->save();
+        
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {

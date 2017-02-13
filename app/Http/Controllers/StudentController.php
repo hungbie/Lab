@@ -79,16 +79,19 @@ class StudentController extends Controller {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		if ($loginState) return view('loggedIn');
+		if ($loginState) {
+			$getReq->session()->forget('loginState');
+			redirect()->route('root'); 
+			return redirect()->action('StudentController@index');
+		}
 		else return view('login');
 	}
 	public function logout(Request $getReq){
 		if ($getReq->session()->has('loginState')){
-			$loginState = $getReq->session()->get('loginState');
 			$getReq->session()->forget('loginState');
 		}
-		else $loginState = false;
-		return view('logout');
+		$loginState = false;
+                return view('index')->with('data', $this->data)->with('limit', sizeof($this->data))->with('loginState', $loginState);
 	}
 	public function check(Request $loginReq) {
 		 $validator = Validator::make($loginReq->all(), [ // as simple as this
@@ -119,7 +122,8 @@ class StudentController extends Controller {
 		}
 		else {
 			$loginReq->session()->put('loginState',true);
-			return view('loggedIn');
+			$loginState = true;
+			return view('index')->with('data', $this->data)->with('limit', sizeof($this->data))->with('loginState', $loginState);
 		}
 	}
 }
