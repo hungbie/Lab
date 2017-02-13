@@ -1,4 +1,4 @@
-@extends('templateLogin')
+@extends('template')
 @section('main')
 <div class="container-fluid">
   @if (count($errors) > 0) {{-- just list down all errors found --}}
@@ -10,7 +10,7 @@
       </ul>
     </div>
   @endif
-  {!! Form::open() !!}
+  {!! Form::open(['files'=>true]) !!}
   <div class="form-group">
     {!! Form::label('nickname', 'Nick name:', ['class' => 'control-label']) !!}
     {!! Form::text('nickname', null, ['class' => 'form-control']) !!}
@@ -24,6 +24,10 @@
     {!! Form::text('kattisaccount', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
+            {!! Form::label('image', 'Choose an image') !!}
+            {!! Form::file('image') !!}
+  </div>
+  <div class="form-group">
     {!! Form::label('nationality', 'Nationality:', ['class' => 'control-label']) !!}
     {!! Form::select('nationality', ['SGP' => 'SGP - Singaporean', 'CHN' => 'CHN - Chinese', 'VNM' => 'VNM - Vietnamese', 'IDN' => 'IDN - Indonesian', 'OTH' => 'OTH - Other Nationality'], null, ['placeholder' => 'Select Nationality']) !!}
   </div>
@@ -33,3 +37,7 @@
   {!! Form::close() !!}
 </div>
 @stop
+
+@section('navbar')
+  @include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'create'])
+@overwrite

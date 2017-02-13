@@ -1,4 +1,4 @@
-@extends($loginState ? 'templateLogin' : 'template')
+@extends('template')
 @section('main') 
 <div class="container-fluid">
 	<div class="row">
@@ -21,7 +21,14 @@
 		</div>
 		<div class="flag-icon-background flag-icon-{{strtolower($data['country'])}} flag-div hidden-xs hidden-sm col-sm-1" style="width:100px; height:50px; background-size:contain; background-position:50%; background-repeat:no-repeat;"></div>
 		<div class="hidden-xs hidden-sm col-sm-2">
-			<img src="{{URL::asset('img/winterfell.jpg')}}" width="150px">
+			<?php
+		$fileDefault = URL::asset('img/smiley.jpg');
+		 if ($image['student_id'] == $id) {
+		 	$file = URL::asset('images/'.$image->filePath);
+		 	echo "<img src=\"".$file."\" width=\"150px\">";
+		 }
+		 else echo "<img src=\"".$fileDefault."\" width=\"150px\">";
+		?>
 		</div>
 	</div>
 	<div class="row">
@@ -169,5 +176,9 @@
 {!! Form::close() !!}
 @endif
 </div>
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'detail', 'name' => $data['name']])
+@overwrite
 
 @stop

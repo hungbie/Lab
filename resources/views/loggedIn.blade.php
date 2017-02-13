@@ -1,4 +1,4 @@
-@extends('templateLogin')
+@extends('template')
 @section('main') 
 <div class="container">
 	<div class="row">
@@ -11,3 +11,7 @@
 	</div>
 </div>
 @stop
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'authpage'])
+@overwrite
