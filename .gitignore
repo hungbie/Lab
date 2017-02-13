@@ -3,3 +3,4 @@ vendor
 .env
 resources/views/vendor
 .idea
+public/images/

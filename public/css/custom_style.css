@@ -12,6 +12,7 @@
 
 .pink {
 	background-color: pink;
+	/*vertical-align:bottom;*/
 }
 
 .bronze {
@@ -32,4 +33,12 @@
 	background-size:contain; 
 	background-position:50%; 
 	background-repeat:no-repeat;
+}
+
+.errorinput {
+	border:1px solid red;
+}
+
+.table > tbody > tr > td {
+	vertical-align: bottom;
 }
