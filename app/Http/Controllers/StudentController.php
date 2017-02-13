@@ -79,7 +79,11 @@ class StudentController extends Controller {
 		if ($getReq->session()->has('loginState'))
 			$loginState = $getReq->session()->get('loginState');
 		else $loginState = false;
-		if ($loginState) return $this->logout($getReq);
+		if ($loginState) {
+			$getReq->session()->forget('loginState');
+			redirect()->route('root'); 
+			return redirect()->action('StudentController@index');
+		}
 		else return view('login');
 	}
 	public function logout(Request $getReq){

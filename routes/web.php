@@ -1,5 +1,5 @@
 <?php
-Route::get('/','StudentController@index');
+Route::get('/','StudentController@index')->name('root');
 Route::get('student/{id}', 'StudentController@detail');
 Route::post('student/{id}', 'FormController@deleteStudent');
 Route::get('help', 'StudentController@help');
