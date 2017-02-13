@@ -53,6 +53,7 @@ class FormController extends Controller {
       $formattedData = array(
           'name' => $s['name'],
           'nickname' => $s['nickname'],
+	  'kattis_account' => $s['kattis_account'],
           'mini_contests' => '',
           'team_contests' => '',
           'homework' => '',
@@ -117,6 +118,7 @@ class FormController extends Controller {
     $s->country = $request->input('nationality');
     $s->name = $request->input('fullname');
     $s->nickname = $request->input('nickname');
+    $s->kattis_account = $request->input('kattisaccount');
     $s->mini_contests = 0;
     $s->team_contests = 0;
     $s->speed = 0;
@@ -314,6 +316,7 @@ class FormController extends Controller {
     $week12 = week12::find($id);
     $s->name = $request->input('fullname');
     $s->nickname = $request->input('nickname');
+    $s->kattis_account = $request->input('kattisaccount');
     $s->mini_contests=$mcSum;
     $s->team_contests=$tcSum;
     $s->homework=$hwSum;
