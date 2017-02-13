@@ -79,6 +79,7 @@ class FormController extends Controller {
       'nickname' => 'required|min:5|max:30',
       'fullname' => 'required|min:5|max:30',
       'kattisaccount' => 'required|min:5|max:30',
+      'image' => 'max:5000',
       'nationality' => 'required',
     ]);
 
