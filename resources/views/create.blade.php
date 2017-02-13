@@ -1,4 +1,4 @@
-@extends('templateLogin')
+@extends('template')
 @section('main')
 <div class="container-fluid">
   @if (count($errors) > 0) {{-- just list down all errors found --}}
@@ -37,3 +37,7 @@
   {!! Form::close() !!}
 </div>
 @stop
+
+@section('navbar')
+  @include('navbarTemplate', ['isLoggedIn' => true, 'activePage' => 'create'])
+@overwrite

@@ -43,7 +43,7 @@ class FormController extends Controller {
     else return view('edit')->with('data', $detail)->with('id', $id);
   }
 
-  public function formatDataForInputFields($id) {
+  private function formatDataForInputFields($id) {
       $s = student::find($id);
       $weeks = array (week1::find($id), week2::find($id), week3::find($id),
           week4::find($id), week5::find($id), week6::find($id), week7::find($id),
@@ -227,17 +227,17 @@ class FormController extends Controller {
     return redirect('/');
   }
   public function validateEdit($id, Request $request) {
-  $regex = 'regex:/^[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5],[0-4]\.[0-5]/';
+  $regex = 'regex:/^[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05],[0-4]\.[05]/';
   $validator = Validator::make($request->all(), [ // as simple as this
       'nickname' => 'required|min:5|max:30',
       'fullname' => 'required|min:5|max:30',
       'kattisaccount' => 'required|min:5|max:30',
-      'mc' => ['required', $regex],
-      'tc' => ['required', $regex],
-      'hw' => ['required', $regex],
-      'bs' => ['required', $regex],
-      'ks' => ['required', $regex],
-      'ac' => ['required', $regex],
+      'mc' => ['required|max:47', $regex],
+      'tc' => ['required|max:47', $regex],
+      'hw' => ['required|max:47', $regex],
+      'bs' => ['required|max:47', $regex],
+      'ks' => ['required|max:47', $regex],
+      'ac' => ['required|max:47', $regex],
     ]);
   if ($validator->fails()) {
       return redirect('student/'.$id.'/edit') // redisplay the form

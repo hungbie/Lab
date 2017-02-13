@@ -1,4 +1,4 @@
-@extends($loginState ? 'templateLogin' : 'template')
+@extends('template')
 @section('main') 
 <div class="container-fluid">
 	<div class="row">
@@ -176,5 +176,9 @@
 {!! Form::close() !!}
 @endif
 </div>
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'detail', 'name' => $data['name']])
+@overwrite
 
 @stop

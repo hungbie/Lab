@@ -1,4 +1,4 @@
-@extends($loginState ? 'templateLogin' : 'template')
+@extends('template')
 @section('main')
 <div class='container-fluid'>
 <!-- table of students-->
@@ -26,3 +26,7 @@
 </table>
 </div>
 @stop
+
+@section('navbar')
+	@include('navbarTemplate', ['isLoggedIn' => $loginState, 'activePage' => 'index'])
+@overwrite
