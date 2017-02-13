@@ -232,12 +232,12 @@ class FormController extends Controller {
       'nickname' => 'required|min:5|max:30',
       'fullname' => 'required|min:5|max:30',
       'kattisaccount' => 'required|min:5|max:30',
-      'mc' => ['required|max:47', $regex],
-      'tc' => ['required|max:47', $regex],
-      'hw' => ['required|max:47', $regex],
-      'bs' => ['required|max:47', $regex],
-      'ks' => ['required|max:47', $regex],
-      'ac' => ['required|max:47', $regex],
+      'mc' => ['required', $regex],
+      'tc' => ['required', $regex],
+      'hw' => ['required', $regex],
+      'bs' => ['required', $regex],
+      'ks' => ['required', $regex],
+      'ac' => ['required', $regex],
     ]);
   if ($validator->fails()) {
       return redirect('student/'.$id.'/edit') // redisplay the form
