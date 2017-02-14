@@ -10,7 +10,7 @@
 			
 		?>
 			<p>
-				<h2>Kattis account: {{$data['nickname']}}</h2>
+				<h2>Kattis account: {{$data['kattis_account']}}</h2>
 			</p>
 
 			<p>

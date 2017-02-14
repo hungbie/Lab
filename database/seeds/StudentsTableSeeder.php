@@ -26,6 +26,7 @@ class StudentsTableSeeder extends Seeder
                 'country' => $faker->countryCode,
                 'name' => $faker->name,
                 'nickname' => $faker->firstName,
+		'kattis_account' => $faker->userName,
                 'mini_contests' => $total_mc,
                 'team_contests' => $total_tc,
                 'speed' => $total_mc + $total_tc,

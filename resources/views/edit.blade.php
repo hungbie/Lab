@@ -25,7 +25,7 @@
   </div>
   <div class="form-group">
     {!! Form::label('kattisaccount', 'Kattis account:', ['class' => 'control-label']) !!}
-    {!! Form::text('kattisaccount', $data['nickname'], ['class' => 'form-control']) !!}
+    {!! Form::text('kattisaccount', $data['kattis_account'], ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
     {!! Form::label('mc', 'Mini contest scores:', ['class' => 'control-label']) !!}
