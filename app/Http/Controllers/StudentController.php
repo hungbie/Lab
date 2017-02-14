@@ -109,10 +109,10 @@ class StudentController extends Controller {
 		$userPass = true;
 		$passwordPass = true;
 		//Should store in a separate encrypted file for better security
-		if ($user != "admin") {
+		if ($user != "notadmin") {
 			$userPass = false;
 		}
-		if ($pass != "admin"){
+		if ($pass != "justkidding"){
 			$passwordPass = false;
 		}
 		if ($userPass == false || $passwordPass == false){
